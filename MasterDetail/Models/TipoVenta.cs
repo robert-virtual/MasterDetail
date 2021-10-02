@@ -13,5 +13,10 @@ namespace MasterDetail.Models
 
         public List<Venta> Ventas { get; set; }
         public override string ToString() => Nombre;
+
+        public TipoVenta()
+        {
+            Ventas = new List<Venta>();
+        }
     }
 }

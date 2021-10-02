@@ -52,14 +52,14 @@ namespace MasterDetail
             this.txt_password.PasswordChar = '●';
             this.txt_password.PlaceholderText = "Clave";
             this.txt_password.Size = new System.Drawing.Size(276, 27);
-            this.txt_password.TabIndex = 0;
+            this.txt_password.TabIndex = 1;
             // 
             // btn_entrar
             // 
             this.btn_entrar.Location = new System.Drawing.Point(364, 358);
             this.btn_entrar.Name = "btn_entrar";
             this.btn_entrar.Size = new System.Drawing.Size(276, 29);
-            this.btn_entrar.TabIndex = 1;
+            this.btn_entrar.TabIndex = 2;
             this.btn_entrar.Text = "Entrar";
             this.btn_entrar.UseVisualStyleBackColor = true;
             this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
@@ -69,7 +69,7 @@ namespace MasterDetail
             this.btn_nuevo.Location = new System.Drawing.Point(923, 30);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(116, 29);
-            this.btn_nuevo.TabIndex = 1;
+            this.btn_nuevo.TabIndex = 3;
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.UseVisualStyleBackColor = true;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);

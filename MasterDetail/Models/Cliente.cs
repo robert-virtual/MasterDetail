@@ -29,6 +29,7 @@ namespace MasterDetail.Models
         public Cliente()
         {
             FechaRegistro = DateTime.Now;
+            Ventas = new List<Venta>();
         }
 
         public override string ToString() => Nombre;

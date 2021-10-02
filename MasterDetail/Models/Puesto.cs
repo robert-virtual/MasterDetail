@@ -15,6 +15,9 @@ namespace MasterDetail.Models
         public string Nombre { get; set; }
         public List<Colaborador> Colaboradores { get; set; }
         public override string ToString() => Nombre;
-
+        public Puesto()
+        {
+            Colaboradores = new List<Colaborador>(); 
+        }
     }
 }

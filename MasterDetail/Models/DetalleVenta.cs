@@ -20,5 +20,9 @@ namespace MasterDetail.Models
         public int Cantidad { get; set; }
         public decimal Descuento { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Cantidad}*{Producto.Nombre}: {Cantidad*PrecioVenta}";
+        }
     }
 }

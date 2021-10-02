@@ -28,9 +28,12 @@ namespace MasterDetail.Models
         public int Cuotas { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime FechaVencimiento { get; set; }
+        public override string ToString() => $"{TipoVenta}";
         public Venta()
         {
             Fecha = DateTime.Now;
+            FechaVencimiento = DateTime.Now;
+            DetallesVenta = new List<DetalleVenta>();
         }
     }
 }

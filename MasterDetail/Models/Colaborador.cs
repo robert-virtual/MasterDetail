@@ -50,6 +50,7 @@ namespace MasterDetail.Models
             FechaNacimiento = new DateTime(2000, 8, 31);
             FechaFinContrato = DateTime.Now.AddYears(5);
             Activo = true;
+            Ventas = new List<Venta>();
         }
 
         public override string ToString() => Nombre;
