@@ -26,8 +26,12 @@ namespace MasterDetail.Views
             using (var db = new VentasDBContext())
             {
                 productos = db.Productos.Include("Categoria").ToList();
-                dgv_prods.DataSource = productos; 
+                UpdateProds();
             }
+        }
+        void UpdateProds()
+        {
+                dgv_prods.DataSource = productos; 
         }
 
         dynamic GetDGVCell(int cell)
@@ -41,11 +45,15 @@ namespace MasterDetail.Views
         {
             var descuento = n_precio.Value * (n_decuento.Value/100);
             var prodId = GetDGVCell(0);
+            var cantidad = (int)n_cantidad.Value;
+
+            if (!(MapProds(prodId, cantidad))) return; 
+
             var detalle = new DetalleVenta()
             {
                 ProductoId = prodId,
                 Producto = productos.Find( p => p.Id == prodId),
-                Cantidad = (int)n_cantidad.Value,
+                Cantidad = cantidad,
                 PrecioVenta = n_precio.Value - descuento,
                 Descuento = descuento,
                 Venta = venta,
@@ -53,6 +61,26 @@ namespace MasterDetail.Views
             };
             venta.DetallesVenta.Add(detalle);
             UpdateListBoxVenta();
+        }
+        bool MapProds(int prodId, int cantidad)
+        {
+            var res = false;
+            productos = productos.ConvertAll(p =>
+            {
+                if (p.Id == prodId )
+                {
+                    if (p.Cantidad >= cantidad)
+                    {
+                        res = true;
+                        p.Cantidad = p.Cantidad - cantidad;
+                    }
+                    else
+                        MessageBox.Show($"No Hay Suficientes Existencias de \"{p.Nombre}\"\nLa Cantidad Maxima Disponible es: {p.Cantidad}","Agregar Producto a la Venta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                return p;
+            });
+            UpdateProds();
+            return res;
         }
         void UpdateListBoxVenta() 
         {
@@ -85,6 +113,7 @@ namespace MasterDetail.Views
                     db.SaveChanges();
                 }
                 MessageBox.Show($"Venta Realizada", "Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReducirInventario(venta.DetallesVenta);
 
                 
             }
@@ -96,7 +125,27 @@ namespace MasterDetail.Views
            
             
         }
+        void ReducirInventario(List<DetalleVenta> detalles)
+        {
+            try
+            {
+                using (var db = new VentasDBContext())
+                {
+                    detalles.ForEach(dv => 
+                    {
+                        var prod = db.Productos.Find(dv.ProductoId);
+                        prod.Cantidad -= dv.Cantidad;
+                        db.SaveChanges();
+                    });
+                }
 
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show($"Error al intentar reducir inventario: {err}", "Reducir Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void dgv_prods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             n_precio.Value = GetDGVCell(2);

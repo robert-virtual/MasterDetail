@@ -127,9 +127,12 @@ namespace MasterDetail.Views
             // 
             // dgv_prods
             // 
+            this.dgv_prods.AllowUserToAddRows = false;
+            this.dgv_prods.AllowUserToDeleteRows = false;
             this.dgv_prods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_prods.Location = new System.Drawing.Point(63, 368);
             this.dgv_prods.Name = "dgv_prods";
+            this.dgv_prods.ReadOnly = true;
             this.dgv_prods.RowHeadersWidth = 51;
             this.dgv_prods.RowTemplate.Height = 29;
             this.dgv_prods.Size = new System.Drawing.Size(816, 296);
@@ -177,6 +180,11 @@ namespace MasterDetail.Views
             // n_decuento
             // 
             this.n_decuento.Location = new System.Drawing.Point(440, 697);
+            this.n_decuento.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.n_decuento.Name = "n_decuento";
             this.n_decuento.Size = new System.Drawing.Size(150, 27);
             this.n_decuento.TabIndex = 5;
@@ -211,6 +219,11 @@ namespace MasterDetail.Views
             // n_cantidad
             // 
             this.n_cantidad.Location = new System.Drawing.Point(270, 697);
+            this.n_cantidad.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.n_cantidad.Minimum = new decimal(new int[] {
             1,
             0,

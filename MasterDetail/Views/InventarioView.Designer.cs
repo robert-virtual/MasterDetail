@@ -46,9 +46,12 @@ namespace MasterDetail.Views
             // 
             // dgv_prods
             // 
+            this.dgv_prods.AllowUserToAddRows = false;
+            this.dgv_prods.AllowUserToDeleteRows = false;
             this.dgv_prods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_prods.Location = new System.Drawing.Point(45, 77);
             this.dgv_prods.Name = "dgv_prods";
+            this.dgv_prods.ReadOnly = true;
             this.dgv_prods.RowHeadersWidth = 51;
             this.dgv_prods.RowTemplate.Height = 29;
             this.dgv_prods.Size = new System.Drawing.Size(1180, 461);
