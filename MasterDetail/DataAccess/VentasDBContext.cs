@@ -8,7 +8,10 @@ namespace MasterDetail.DataAccess
 {
     public class VentasDBContext:DbContext
     {
-        public VentasDBContext():base("VentasDB"){}
+        public VentasDBContext():base("VentasDB")
+        {
+            Database.SetInitializer(new VentasDBInitializer());
+        }
 
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
