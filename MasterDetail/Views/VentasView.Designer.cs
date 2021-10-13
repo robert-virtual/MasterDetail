@@ -49,6 +49,7 @@ namespace MasterDetail.Views
             this.n_cantidad = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.n_precio = new System.Windows.Forms.NumericUpDown();
+            this.btn_update_prods = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_decuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cantidad)).BeginInit();
@@ -255,10 +256,21 @@ namespace MasterDetail.Views
             this.n_precio.Size = new System.Drawing.Size(150, 27);
             this.n_precio.TabIndex = 5;
             // 
+            // btn_update_prods
+            // 
+            this.btn_update_prods.Location = new System.Drawing.Point(759, 322);
+            this.btn_update_prods.Name = "btn_update_prods";
+            this.btn_update_prods.Size = new System.Drawing.Size(120, 29);
+            this.btn_update_prods.TabIndex = 6;
+            this.btn_update_prods.Text = "Actualizar";
+            this.btn_update_prods.UseVisualStyleBackColor = true;
+            this.btn_update_prods.Click += new System.EventHandler(this.btn_update_prods_Click);
+            // 
             // VentasView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_update_prods);
             this.Controls.Add(this.n_precio);
             this.Controls.Add(this.n_cantidad);
             this.Controls.Add(this.n_decuento);
@@ -312,5 +324,6 @@ namespace MasterDetail.Views
         private System.Windows.Forms.NumericUpDown n_cantidad;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown n_precio;
+        private System.Windows.Forms.Button btn_update_prods;
     }
 }

@@ -16,7 +16,8 @@ namespace MasterDetail.Views
         {
             new VentasView(),
             new InventarioView(), 
-            new HistorialVentas() 
+            new HistorialVentas(),
+            new ClientesView(),
         };
 
         public Menu(Colaborador colaborador_)
@@ -57,6 +58,12 @@ namespace MasterDetail.Views
         {
 
             LoadNavegacion(2);
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadNavegacion(3);
+
         }
     }
 }

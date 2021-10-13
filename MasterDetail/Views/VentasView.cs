@@ -170,5 +170,10 @@ namespace MasterDetail.Views
             txt_nombre_cliente.Text = cliente == null ? "" : cliente.Nombre;
             txt_tel_cliente.Text = cliente == null ?  "" : cliente.Telefono;
         }
+
+        private void btn_update_prods_Click(object sender, EventArgs e)
+        {
+            LoadProds();
+        }
     }
 }

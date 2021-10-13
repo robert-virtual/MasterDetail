@@ -33,8 +33,9 @@ namespace MasterDetail.Views
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@ namespace MasterDetail.Views
             this.ventasToolStripMenuItem,
             this.inventarioToolStripMenuItem,
             this.historialVentasToolStripMenuItem,
+            this.clientesToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -74,6 +76,13 @@ namespace MasterDetail.Views
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
+            // historialVentasToolStripMenuItem
+            // 
+            this.historialVentasToolStripMenuItem.Name = "historialVentasToolStripMenuItem";
+            this.historialVentasToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.historialVentasToolStripMenuItem.Text = "Historial Ventas";
+            this.historialVentasToolStripMenuItem.Click += new System.EventHandler(this.historialVentasToolStripMenuItem_Click);
+            // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
@@ -81,12 +90,12 @@ namespace MasterDetail.Views
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
-            // historialVentasToolStripMenuItem
+            // clientesToolStripMenuItem
             // 
-            this.historialVentasToolStripMenuItem.Name = "historialVentasToolStripMenuItem";
-            this.historialVentasToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
-            this.historialVentasToolStripMenuItem.Text = "Historial Ventas";
-            this.historialVentasToolStripMenuItem.Click += new System.EventHandler(this.historialVentasToolStripMenuItem_Click);
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -114,5 +123,6 @@ namespace MasterDetail.Views
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
     }
 }
